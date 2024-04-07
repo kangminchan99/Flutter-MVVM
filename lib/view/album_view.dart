@@ -19,12 +19,15 @@ class _AlbumViewState extends State<AlbumView> {
       appBar: AppBar(title: const Text('MVVM')),
       body: Consumer<AlbumViewModel>(builder: (context, provider, child) {
         albumList = provider.albumList;
-        return ListView.builder(itemBuilder: (context, index) {
-          return Container(
-            padding: const EdgeInsets.all(15),
-            child: Text('${albumList[index].id}: ${albumList[index].title}'),
-          );
-        });
+        return ListView.builder(
+            itemCount: albumList.length,
+            itemBuilder: (context, index) {
+              return Container(
+                padding: const EdgeInsets.all(15),
+                child:
+                    Text('${albumList[index].id}: ${albumList[index].title}'),
+              );
+            });
       }),
     );
   }
