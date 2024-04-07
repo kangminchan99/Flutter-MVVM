@@ -21,7 +21,7 @@ class _AlbumViewState extends State<AlbumView> {
         albumList = provider.albumList;
         return ListView.builder(itemBuilder: (context, index) {
           return Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Text('${albumList[index].id}: ${albumList[index].title}'),
           );
         });
